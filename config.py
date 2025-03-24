@@ -4,6 +4,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 class Config:
+    SECRET_KEY = os.environ.get('SECRET_KEY') or 'dev-key-please-change'
+    
     # MySQL Configuration
     DB_HOST = os.environ.get('DB_HOST', 'localhost')
     DB_USER = os.environ.get('DB_USER', 'root')

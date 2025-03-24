@@ -7,7 +7,7 @@ db = SQLAlchemy()
 
 def create_app(config_class=Config):
     app = Flask(__name__, 
-                template_folder=os.path.join(os.path.dirname(os.path.abspath(__file__)), 'views/templates'))
+                template_folder=os.path.join(os.path.dirname(os.path.abspath(__file__)), 'views', 'templates'))
     app.config.from_object(config_class)
 
     db.init_app(app)
