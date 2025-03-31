@@ -81,17 +81,8 @@ Currently, only the Create operation is implemented. The following operations ne
 
 To complete the CRUD application, you should implement:
 
-1. **Read Operations**
-   - Add a user details page
-   - Implement user listing with pagination
-   - Add search functionality
 
-2. **Update Operations**
-   - Create an edit user form
-   - Implement update logic in the controller
-   - Add validation for updates
-
-3. **Delete Operations**
+1. **Delete Operations**
    - Add delete confirmation
    - Implement soft or hard delete
    - Handle related data cleanup
