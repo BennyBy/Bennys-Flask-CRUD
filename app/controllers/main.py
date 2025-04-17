@@ -31,3 +31,11 @@ def add_user():
         return redirect(url_for('main.index'))
         
     return render_template('add_user.html') 
+
+@bp.route('/user/delete/<int:user_id>', methods=['POST'])
+def delete_user(user_id):
+    user = User.query.get_or_404(user_id)
+    db.session.delete(user)
+    db.session.commit()
+    flash('User deleted successfully')
+    return redirect(url_for('main.index'))
