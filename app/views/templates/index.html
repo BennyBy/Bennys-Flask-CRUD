@@ -16,6 +16,7 @@
                 <th>Username</th>
                 <th>Email</th>
                 <th>Created At</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -25,9 +26,18 @@
                 <td>{{ user.username }}</td>
                 <td>{{ user.email }}</td>
                 <td>{{ user.created_at.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                <td>
+                    <!-- Delete form -->
+                    <form action="{{ url_for('main.delete_user', user_id=user.id) }}"
+                          method="post"
+                          style="display:inline"
+                          onsubmit="return confirm('Delete {{ user.username }}?');">
+                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                    </form>
+                </td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
 </div>
-{% endblock %} 
+{% endblock %}
